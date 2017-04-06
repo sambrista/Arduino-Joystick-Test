@@ -1,11 +1,11 @@
-int joy_hor = 0;
-int joy_ver = 1;
-int pin_up = 6;
-int pin_down = 3;
-int pin_left = 9;
-int pin_right = 5;
-int pin_led = 12;
-int pin_boton = 7;
+int joy_hor = 0; // Horizontal axis pin
+int joy_ver = 1; // Vertical axis pin
+int pin_up = 6; // Up led pin (must be a PWM one)
+int pin_down = 3; // Down led pin (must be a PWM one)
+int pin_left = 9; // Left led pin (must be a PWM one)
+int pin_right = 5; // Right led pin (must be a PWM one)
+int pin_led = 12; // Led pin to test if switch works
+int pin_button = 7; // Button input pin
 
 
 int value_up = 0;
@@ -18,7 +18,7 @@ int value2 = 0;
 
 void setup() {
   pinMode(pin_led, OUTPUT);
-  pinMode(pin_boton, INPUT);
+  pinMode(pin_button, INPUT);
 }
 
 void loop() {
@@ -49,5 +49,5 @@ void loop() {
  analogWrite(pin_down, value_down); 
  analogWrite(pin_left, value_left); 
  analogWrite(pin_right, value_right);
- digitalWrite(pin_led,digitalRead(pin_boton));
+ digitalWrite(pin_led,digitalRead(pin_button));
 }
